@@ -1,24 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 const Home = () => {
+	const [timer, setTimer] = useState(0);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setTimer((timer) => timer + 1);
+		}, 1000);
+		return () => clearInterval(interval);
+	}, []);
+
 	return (
-		<div>
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="row">
+			<div
+				style={{ width: "2rem", height: "2.5rem" }}
+				className="bg-dark text-white m-2">
+				{timer}
+			</div>
+			<div
+				style={{ width: "2rem", height: "2.5rem" }}
+				className="bg-dark text-white m-2">
+				{timer}
+			</div>
+			<div
+				style={{ width: "2rem", height: "2.5rem" }}
+				className="bg-dark text-white m-2">
+				{timer}
+			</div>
+			<div
+				style={{ width: "2rem", height: "2.5rem" }}
+				className="bg-dark text-white m-2">
+				{timer}
+			</div>
+			<div
+				style={{ width: "2rem", height: "2.5rem" }}
+				className="bg-dark text-white m-2">
+				{timer}
+			</div>
 		</div>
 	);
 };
