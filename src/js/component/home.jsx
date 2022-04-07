@@ -14,7 +14,7 @@ const Home = () => {
 	});
 
 	return (
-		<div className="container justify-content-center">
+		<div className="container ">
 			<div className="container shadow-sm bg-dark">
 				<div className="row justify-content-center">
 					<SecondCounter seconds={time} />
